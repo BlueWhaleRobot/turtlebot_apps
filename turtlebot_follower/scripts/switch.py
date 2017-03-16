@@ -20,6 +20,7 @@ class BehaviorSwitch(object):
 
     def run(self):
         rospy.init_node('behavior_switch', anonymous=True)
+        self.cmd_vel_pub = rospy.Publisher('cmd_vel', Twist, queue_size=1)
         pub = rospy.Publisher('cmd_vel_mux/input/switch', Twist, queue_size=10)
         rospy.Subscriber('joy', Joy, self.callback)
         rate = rospy.Rate(10)
@@ -28,6 +29,7 @@ class BehaviorSwitch(object):
                 empty_msg = Twist()
                 pub.publish(empty_msg)
             rate.sleep()
+        self.cmd_vel_pub.publish(Twist())
 
 if __name__ == '__main__':
     try:

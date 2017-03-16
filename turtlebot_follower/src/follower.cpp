@@ -135,7 +135,7 @@ private:
   /*!
    * @brief Callback for point clouds.
    * Callback for depth images. It finds the centroid
-   * of the points in a box in the center of the image. 
+   * of the points in a box in the center of the image.
    * Publishes cmd_vel messages with the goal from the image.
    * @param cloud The point cloud message.
    */
@@ -249,7 +249,7 @@ private:
   void publishMarker(double x,double y,double z)
   {
     visualization_msgs::Marker marker;
-    marker.header.frame_id = "/camera_rgb_optical_frame";
+    marker.header.frame_id = "/kinect_rgb_optical_frame";
     marker.header.stamp = ros::Time();
     marker.ns = "my_namespace";
     marker.id = 0;
@@ -284,7 +284,7 @@ private:
     double scale_z = (max_z_ - z)*2;
 
     visualization_msgs::Marker marker;
-    marker.header.frame_id = "/camera_rgb_optical_frame";
+    marker.header.frame_id = "/kinect_rgb_optical_frame";
     marker.header.stamp = ros::Time();
     marker.ns = "my_namespace";
     marker.id = 1;
