@@ -2,7 +2,7 @@
   The turtlebot people (or whatever) follower nodelet.
  -->
 <launch>
-  <include file="$(find turtlebot_follower)/launch/kinect-follower.launch"/>
   <!-- Launch the script which will toggle turtlebot following on and off based on a joystick button. default: on -->
   <node name="switch" pkg="turtlebot_follower" type="switch.py"/>
+  <include file="$(find turtlebot_follower)/launch/kinect-follower.launch"/>
 </launch>
