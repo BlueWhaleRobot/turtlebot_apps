@@ -122,7 +122,6 @@
     <node pkg="nodelet" type="nodelet" name="turtlebot_follower"
           args="load turtlebot_follower/TurtlebotFollower $(arg manager)">
       <remap from="turtlebot_follower/cmd_vel" to="/cmd_vel"/>
-      <remap from="depth/points" to="$(arg depth)/points"/>
       <param name="enabled" value="true" />
       <param name="x_scale" value="10.0" />
       <param name="z_scale" value="8.0" />
